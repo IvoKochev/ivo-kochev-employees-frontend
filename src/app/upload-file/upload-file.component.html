@@ -1,0 +1,33 @@
+<div class="container-center">
+  <table>
+    <tr>
+      <h1>Upload file</h1>
+    </tr>
+    <tr>
+      <input type="file" id="customFile" (change)="selectFile($event)">
+      <button class="btn-primary" (click)="upload()">Upload file</button>
+    </tr>
+    <tr>
+      <table *ngIf="responseObject">
+        <thead>
+        <tr>
+          <th>Employee ID #1</th>
+          <th>Employee ID #2</th>
+          <th>Project Id</th>
+          <th>Days Worked</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>{{responseObject.firstEmployeeId}}</td>
+          <td>{{responseObject.secondEmployeeId}}</td>
+          <td>{{responseObject.projectId}}</td>
+          <td>{{responseObject.daysWorked}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </tr>
+
+    <div *ngIf="errorMessage">Error: {{errorMessage}}</div>
+  </table>
+</div>
